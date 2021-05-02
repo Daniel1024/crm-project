@@ -5,7 +5,7 @@ import { ConfigService } from '@nestjs/config';
 
 import { ApiConfigService } from '@common/providers';
 import { JwtConfig } from '@common/interfaces';
-import { UsersModule } from '../users/users.module';
+import { UsersModule } from '@users/users.module';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { LocalStrategy } from './strategies/local.strategy';
