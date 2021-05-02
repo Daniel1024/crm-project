@@ -1,4 +1,5 @@
 import { JwtModuleAsyncOptions } from '@nestjs/jwt';
+import { TypeOrmModuleAsyncOptions } from '@nestjs/typeorm';
 import { ConfigModuleOptions } from '@nestjs/config/dist/interfaces';
 
 import { AppConfigService, ProvidersModule } from '@common/providers';
@@ -17,6 +18,20 @@ export const configModuleOptions: ConfigModuleOptions = {
 
 export const jwtModuleAsyncOptions: JwtModuleAsyncOptions = {
   imports: [ProvidersModule],
-  useFactory: (config: AppConfigService) => config.jwt,
-  inject: [AppConfigService]
-}
+  useFactory: ({ jwt }: AppConfigService) => ({ ...jwt }),
+  inject: [AppConfigService],
+};
+
+export const typeOrmModuleAsyncOptions = (dirname: string): TypeOrmModuleAsyncOptions => ({
+  imports: [ProvidersModule],
+  useFactory: ({ database }: AppConfigService) => ({
+    ...database,
+    type: 'mysql',
+    entities: [`${dirname}/**/*.entity{.ts,.js}`],
+    autoLoadEntities: true,
+    synchronize: true,
+    logging: true,
+    logger: 'file',
+  }),
+  inject: [AppConfigService],
+});

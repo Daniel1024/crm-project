@@ -1,4 +1,4 @@
-export type ENV = 'dev' | 'production' | 'docker';
+export type ENV = 'development' | 'production' | 'docker';
 
 export interface AppConfig {
   env: ENV;
@@ -9,4 +9,7 @@ export interface AppConfig {
 export interface DatabaseConfig {
   host: string;
   port: number;
+  username: string;
+  password: string;
+  database: string;
 }

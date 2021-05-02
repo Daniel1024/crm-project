@@ -3,7 +3,7 @@ import { json, urlencoded } from 'express';
 import * as helmet from 'helmet';
 
 import { AppConfigService } from '@common/providers';
-import { tableLogRoutes } from '@common/helpers';
+import { setDefaultUser, tableLogRoutes } from '@common/helpers';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -23,6 +23,7 @@ async function bootstrap() {
   if (appConfig.showLogs) {
     tableLogRoutes(app.getHttpServer(), appConfig);
   }
+  await setDefaultUser();
 }
 
 bootstrap();

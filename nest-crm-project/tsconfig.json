@@ -13,7 +13,8 @@
     "paths": {
       "@common/*": ["src/common/*"],
       "@auth/*": ["src/auth/*"],
-      "@users/*": ["src/users/*"],
+      "@user/*": ["src/user/*"],
+      "@users/*": ["src/users/*"]
     },
     "incremental": true
   }

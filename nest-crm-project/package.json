@@ -28,6 +28,8 @@
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.6.15",
     "@nestjs/typeorm": "^7.1.5",
+    "bcrypt": "^5.0.1",
+    "class-validator": "^0.13.1",
     "helmet": "^4.5.0",
     "mysql2": "^2.2.5",
     "passport": "^0.4.1",
