@@ -1,16 +1,14 @@
 import { NestFactory } from '@nestjs/core';
-import { ConfigService } from '@nestjs/config';
 import { json, urlencoded } from 'express';
 import * as helmet from 'helmet';
 
-import { AppConfig } from '@common/interfaces';
+import { AppConfigService } from '@common/providers';
 import { tableLogRoutes } from '@common/helpers';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const configService = app.get(ConfigService);
-  const appConfig = configService.get<AppConfig>('app');
+  const appConfig = app.get(AppConfigService).app;
 
   // app.useGlobalFilters(new AllExceptionsFilter(config));
   // app.useGlobalInterceptors(new TransformInterceptor());

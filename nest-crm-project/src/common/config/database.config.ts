@@ -1,4 +1,5 @@
 import { registerAs } from '@nestjs/config';
+
 import { DatabaseConfig } from '@common/interfaces';
 
 export const databaseConfig = registerAs('database', (): DatabaseConfig => ({

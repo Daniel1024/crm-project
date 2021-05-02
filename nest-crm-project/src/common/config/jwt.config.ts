@@ -1,6 +1,9 @@
 import { registerAs } from '@nestjs/config';
-import { JwtConfig } from '@common/interfaces';
+import { JwtModuleOptions } from '@nestjs/jwt';
 
-export const jwtConfig = registerAs('jwt', (): JwtConfig => ({
-  secret: process.env.JWT_SECRET || 'top_secret_key'
+export const jwtConfig = registerAs('jwt', (): JwtModuleOptions => ({
+  secret: process.env.JWT_SECRET_KEY || 'rzxlszyykpbgqcflzxsqcysyhljt',
+  signOptions: {
+    expiresIn: process.env.JWT_EXPIRES_IN || '3600s',
+  },
 }));

@@ -1,21 +1,17 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
-import { config } from '@common/config';
+import { configModuleOptions } from '@common/config';
 import { AuthModule } from '@auth/auth.module';
 import { UsersModule } from '@users/users.module';
-import { ApiConfigService } from '@common/providers';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-      load: config,
-    }),
+    ConfigModule.forRoot(configModuleOptions),
     AuthModule,
     UsersModule
   ],
   controllers: [],
-  providers: [ApiConfigService],
+  providers: []
 })
 export class AppModule { }

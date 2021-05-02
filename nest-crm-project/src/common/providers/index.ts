@@ -1,1 +1,2 @@
-export * from './api-config.service'
+export * from './app-config.service';
+export * from './providers.module';
