@@ -1,5 +1,5 @@
 import { registerAs } from '@nestjs/config';
-import { DatabaseConfig } from '@interfaces';
+import { DatabaseConfig } from '@interfaces/index';
 
 export const databaseConfig = registerAs('database', (): DatabaseConfig => ({
   host: process.env.DATABASE_HOST,

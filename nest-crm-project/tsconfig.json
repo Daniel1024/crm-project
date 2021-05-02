@@ -11,9 +11,10 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@config": ["config/index.ts"],
-      "@shared": ["shared/index.ts"],
-      "@interfaces": ["interfaces/index.ts"]
+      "@config/*": ["config/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@shared/*": ["shared/*"],
+      "@src/*": ["src/*"]
     },
     "incremental": true
   }

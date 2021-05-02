@@ -1,4 +1,4 @@
-import { AppConfig } from '@interfaces';
+import { AppConfig } from '@interfaces/index';
 
 function RouteTable(stack, item): void {
   this.method = stack.method.toUpperCase();

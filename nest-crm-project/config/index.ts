@@ -1,7 +1,9 @@
 import { appConfig } from './app.config';
 import { databaseConfig } from './database.config';
+import { jwtConfig } from './jwt.config';
 
 export const config = [
   appConfig,
-  databaseConfig
+  databaseConfig,
+  jwtConfig
 ];

@@ -10,3 +10,7 @@ export interface DatabaseConfig {
   host: string;
   port: number;
 }
+
+export interface JwtConfig {
+  secret: string;
+}

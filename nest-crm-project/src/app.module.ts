@@ -1,7 +1,10 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 
-import { config } from '@config';
+import { config } from '@config/index';
+import { AuthModule } from '@src/auth/auth.module';
+import { ApiConfigService } from '@src/providers/api-config/api-config.service';
+import { UsersModule } from '@src/users/users.module';
 
 @Module({
   imports: [
@@ -9,8 +12,10 @@ import { config } from '@config';
       isGlobal: true,
       load: config,
     }),
+    AuthModule,
+    UsersModule
   ],
   controllers: [],
-  providers: [],
+  providers: [ApiConfigService],
 })
 export class AppModule { }

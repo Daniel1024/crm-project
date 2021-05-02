@@ -3,9 +3,9 @@ import { ConfigService } from '@nestjs/config';
 import { json, urlencoded } from 'express';
 import * as helmet from 'helmet';
 
-import { tableLogRoutes } from '@shared';
+import { tableLogRoutes } from '@shared/index';
 import { AppModule } from './app.module';
-import { AppConfig } from '@interfaces';
+import { AppConfig } from '@interfaces/index';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
