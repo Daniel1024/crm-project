@@ -1,5 +1,5 @@
 import { registerAs } from '@nestjs/config';
-import { AppConfig, ENV } from '@interfaces/index';
+import { AppConfig, ENV } from '@common/interfaces';
 
 export const appConfig = registerAs('app', (): AppConfig => ({
   env: process.env.APP_ENV as ENV  || 'dev',

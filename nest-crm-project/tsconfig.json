@@ -11,10 +11,7 @@
     "outDir": "./dist",
     "baseUrl": "./",
     "paths": {
-      "@config/*": ["config/*"],
-      "@interfaces/*": ["interfaces/*"],
-      "@shared/*": ["shared/*"],
-      "@src/*": ["src/*"]
+      "@common/*": ["src/common/*"]
     },
     "incremental": true
   }
